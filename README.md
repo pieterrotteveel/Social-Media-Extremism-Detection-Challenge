@@ -1,4 +1,4 @@
-````markdown
+
 # Social Media Extremism Detection
 
 This project implements an end-to-end Natural Language Processing (NLP) pipeline to detect extremist content in social media messages. It leverages Hugging Face Transformers and PyTorch to classify each message as either `NON_EXTREMIST` or `EXTREMIST`.
@@ -115,11 +115,8 @@ Make sure your data matches this schema before running the notebook.
 
 1. **Set File Paths**
 
-   Update the dataset paths in the notebook to point to your local data, e.g.:
+   Update the dataset paths in the notebook to point to your local data.
 
-   * `social-media-extremism-detection-challenge-data/`
-   * `/kaggle/input/dataset-for-comp/`
-   * or your own local directory.
 
 2. **Load and Preprocess Data**
 
@@ -148,42 +145,7 @@ The notebook generates the following submission files:
 * `submission_distilbert.csv`
   Predictions from the standard DistilBERT baseline.
 
-* `submission_distilbert_precision.csv`
+* `submission_roberta.csv`
   Predictions using the Twitter-RoBERTa model with the 0.85 confidence thresholding strategy.
 
 Each file contains predicted labels for all rows in `test.csv`, keyed by `ID`.
-
----
-
-## Evaluation
-
-For the Twitter-RoBERTa approach, the notebook reports:
-
-* **Classification report** on the validation set:
-
-  * Precision, recall, and F1-score for each class.
-* **Confusion matrix**:
-
-  * Visualized as a heatmap to inspect:
-
-    * True vs. predicted labels.
-    * The effect of confidence thresholding on extremism detection.
-
-These metrics can be used to:
-
-* Compare models (baseline vs. domain-specialized).
-* Adjust hyperparameters or threshold values based on your risk tolerance and application needs.
-
----
-
-## Notes
-
-* This project is intended as a framework for experimentation with transformer-based extremism detection.
-* You can easily extend it by:
-
-  * Trying different transformer backbones.
-  * Tuning hyperparameters (batch size, learning rate, epochs).
-  * Modifying the confidence threshold to trade off precision vs. recall.
-
-```
-```
